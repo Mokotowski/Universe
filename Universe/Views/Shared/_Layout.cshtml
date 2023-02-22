@@ -3,9 +3,52 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - Universe</title>
+    <title style="font-size: 24px;">@ViewData["Title"] - Universe</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <style>
+        body {
+            background-color: #333333;
+            color: #FFFFFF;
+        }
+
+        header {
+            background-color: #444444;
+            color: #FFFFFF;
+            padding-top: 2rem;
+            padding-bottom: 1rem;
+        }
+
+        .nav-link {
+            color: #FFFFFF;
+        }
+
+        .navbar-brand {
+            color: #008CBA;
+        }
+
+        .border-bottom {
+            border-bottom: 1px solid #666666;
+        }
+
+        .box-shadow {
+            box-shadow: 0 2px 4px rgba(0,0,0,.5);
+        }
+
+        .footer {
+            background-color: #444444;
+            color: #FFFFFF;
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+            margin-top: 3rem;
+        }
+
+        /* Dodany kod */
+        .navbar {
+            background-color: #222222 !important;
+        }
+
+    </style>
     <link rel="stylesheet" href="~/Universe.styles.css" asp-append-version="true" />
 </head>
 <body>
@@ -20,34 +63,31 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Dom</a>
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Dom</a>
                         </li>
-
                         @if (User.Identity.IsAuthenticated)
                         {
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Accounts" asp-action="LogOut">Wyloguj</a>
+                                <a class="nav-link" asp-area="" asp-controller="Accounts" asp-action="LogOut">Wyloguj</a>
                             </li>
                             <li class="nav-item">
-                                    <a class="nav-link text-dark" asp-area="" asp-controller="Video" asp-action="ListVideo">Lista filmów</a>
+                                <a class="nav-link" asp-area="" asp-controller="Video" asp-action="ListVideo">Lista filmów</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Video" asp-action="SearchVideo">Wyszukaj</a>
+                                <a class="nav-link" asp-area="" asp-controller="Video" asp-action="SearchVideo">Wyszukaj</a>
                             </li>
                         }
                         else
                         {
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Accounts" asp-action="Login">Logowanie</a>
+                                <a class="nav-link" asp-area="" asp-controller="Accounts" asp-action="Login">Logowanie</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Accounts" asp-action="Register">Rejestracja</a>
+                                <a class="nav-link" asp-area="" asp-controller="Accounts" asp-action="Register">Rejestracja</a>
                             </li>
                         }
-
-
-
                     </ul>
+
                 </div>
             </div>
         </nav>
