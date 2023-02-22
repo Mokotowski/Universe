@@ -1,0 +1,15 @@
+﻿@model Universe.Models.Search
+@{
+    ViewData["Title"] = "SearchVideo";
+}
+
+<h1>SearchVideo</h1>
+
+
+
+@using (Html.BeginForm("SearchVideoResult", "Video", FormMethod.Get))
+{
+        <span>Nazwa: </span> @Html.TextBoxFor(x => x.looking)
+
+        <button type="submit">Szukaj</button>
+}
