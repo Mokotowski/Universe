@@ -1,0 +1,16 @@
+﻿@model Universe.Models.Register
+
+<h2>Rejestracja</h2>
+
+@using (Html.BeginForm("Register", "Accounts", FormMethod.Post))
+{
+    @Html.ValidationSummary();
+
+    <span>Login: </span> @Html.TextBoxFor(x => x.Login)
+    <span>Hasło: </span> @Html.TextBoxFor(x => x.Password)
+    <span>Powtórz hasło: </span> @Html.PasswordFor(x => x.SecondPassword)
+    <span>Email: </span> @Html.PasswordFor(x => x.Email)
+
+
+    <button type="submit">Rejestruj</button>
+}
