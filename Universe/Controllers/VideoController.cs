@@ -40,5 +40,18 @@ namespace Universe.Controllers
             var videos = _videoService.GetSearched(search);
             return View(videos);
         }
+
+        [HttpGet]
+        public IActionResult PlayVideo(Video video)
+        {
+            if (video == null)
+            {
+                return RedirectToAction("Index", "Home");
+            }
+            else
+            {
+                return View(video);
+            }
+        }
     }
 }

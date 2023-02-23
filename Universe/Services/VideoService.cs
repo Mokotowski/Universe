@@ -21,6 +21,7 @@ namespace Universe.Services
         }
         public List<Video> GetSearched(Search search)
         {
+            search.looking = char.ToUpper(search.looking[0]) + search.looking.Substring(1);
             var videos = _context.Video.Where(m => m.Name.Contains(search.looking)).ToList();
             return videos;
         }
