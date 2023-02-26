@@ -1,0 +1,16 @@
+﻿@model IEnumerable<Universe.Models.Video>
+
+@{
+    ViewData["Title"] = "SearchVideoResult";
+}
+
+<h1>SearchVideoResult</h1>
+<ul>
+    @foreach (var video in Model)
+    {
+        <li>@video.Name </li>
+        <a href="@Url.Action("DetailsVideo","Video", new { Id = video.Id })">Szczegóły</a>
+        <a href="@Url.Action("PlayVideo", "Video", new { Id = video.Id, Name = video.Name, Format = video.Format, Fps = video.Fps, Height = video.Height, Width = video.Width })">Odtwórz</a>
+
+    }
+</ul>

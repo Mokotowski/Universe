@@ -1,0 +1,8 @@
+﻿@model Universe.Models.Video
+
+<h1>Szczególy filmu</h1>
+
+
+<p>Nazwa: @Model.Name</p>
+<p>Rozdzielczość: @Model.Width x @Model.Height</p>
+<a href="@Url.Action("PlayVideo", "Video", new { Id = Model.Id, Name = Model.Name, Format = Model.Format, Fps = Model.Fps, Height = Model.Height, Width = Model.Width })">Odtwórz</a>

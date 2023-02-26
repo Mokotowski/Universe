@@ -1,0 +1,17 @@
+﻿@model Universe.Models.Video
+<h1>PlayVideo</h1>
+<h1> Tytuł: @(Model.Name)</h1>
+
+@{
+    string path = "/Filmy/" + Model.Name + Model.Format;
+
+    <video width="@(Model.Height)" height="@(Model.Width)" controls>
+        <source src="@path" type="video/mp4">
+    </video>
+}
+
+
+
+
+
+
